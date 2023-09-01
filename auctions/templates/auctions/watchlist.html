@@ -1,0 +1,49 @@
+{% extends "auctions/layout.html" %}
+
+
+
+        {% block head %}
+        {% load static %}
+        <link href="{% static 'auctions/index_styles.css' %}" rel="stylesheet">
+        {% endblock %}
+
+
+
+{% block body %}
+    <h2>Watchlist</h2>
+
+    
+
+    <div class="listo">
+    {% for list in active_listings %}
+      
+    <figure class="snip1396 green">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample13.jpg" alt="pr-sample13" />
+        <div class="image"><img src="{{list.image_url}}" alt="pr-sample13" /></div>
+        <figcaption>
+          <h3>{{list.product_title}}</h3>
+          <p>{{list.description}}</p>
+        </figcaption>
+        <div class="price">
+          ${{list.price.bid}}
+        </div><a href="#" class="add-to-cart">
+           
+            <a href="{% url 'showitem' id=list.id %}" class="add-to-cart">
+          Show Item<i class="ion-android-checkbox-outline"></i>
+            </a>
+      </figure>
+     
+
+    
+    {% endfor %}
+</div> 
+
+    <script>
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+</script>
+
+{% endblock %}

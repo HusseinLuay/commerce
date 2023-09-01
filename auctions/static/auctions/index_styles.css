@@ -1,0 +1,120 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:500,700);
+.snip1396 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  background: #20638f;
+  text-align: left;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.snip1396 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.snip1396 > img,
+.snip1396 .image img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  max-width: 100%;
+}
+.snip1396 > img {
+  vertical-align: top;
+  position: relative;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  opacity: 0.6;
+}
+.snip1396 figcaption,
+.snip1396 .image {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.snip1396 .image {
+  position: absolute;
+  top: 0;
+  bottom: 45%;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 1px 0 rgba(255, 255, 255, 0.2);
+}
+.snip1396 .image img {
+  position: absolute;
+  top: 0;
+}
+.snip1396 figcaption {
+  position: absolute;
+  top: 55%;
+  bottom: 46px;
+  left: 20px;
+  right: 20px;
+  border-bottom: 2px solid #ffffff;
+  padding-top: 20px;
+  z-index: 1;
+}
+.snip1396 h3,
+.snip1396 p {
+  margin: 0;
+}
+.snip1396 h3 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.snip1396 p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.snip1396 .price,
+.snip1396 .add-to-cart {
+  position: absolute;
+  bottom: 0;
+  padding: 0 20px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 1px;
+}
+.snip1396 .price {
+  left: 0;
+}
+.snip1396 .price s {
+  margin-right: 5px;
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+.snip1396 .add-to-cart {
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  opacity: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.9em;
+  right: 0;
+}
+.snip1396 .add-to-cart i {
+  margin-left: 5px;
+  font-size: 1.1em;
+}
+.snip1396:hover .add-to-cart,
+.snip1396.hover .add-to-cart {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.listo{
+    display:flex;
+}

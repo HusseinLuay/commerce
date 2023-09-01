@@ -1,0 +1,76 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+
+{% if message %}
+    {% if updated %}
+        <p>{{message}}</p>
+    {% else %} 
+        <p>{{message}}</p>
+    {% endif %}
+{% endif %}
+
+
+
+{% if user.is_authenticated %}
+    {% if isOwner %}
+        <form action="{% url 'close_Auction' id=product_information.id %}" method="POST">
+            {% csrf_token %}
+                <input type="submit" name="close" value="close">
+        </form>
+    {% endif %}
+
+    {% if watchlist %}
+        <form action="{% url 'removewatchlist' id=product_information.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Reomve from watchlist">
+        </form>
+    {% else %}
+         <form action="{% url 'addwatchlist' id=product_information.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Add to watchlist">
+        </form>
+    {% endif %}
+
+{% endif %}
+
+{% if not product_information.is_active and user == product_information.price.user %}
+<p>Congralations ! , you won the auction. </p>
+{% endif %}
+
+<h1>{{product_information.product_title}}</h1>
+<img src="{{product_information.image_url}}" alt="" height="400px">
+<h4>{{product_information.description}}</h4>
+<h2>${{product_information.price.bid}}</h2>
+
+<h6>Owner : {{product_information.owner}}</h6>
+<h6>Category : {{product_information.category}}</h6>
+
+{% if user.is_authenticated %}
+<form action="{% url 'add_bid'  id=product_information.id %}" method="POST">
+    {% csrf_token %}
+    <label>Add a bid :</label>
+    <input type="text" name="new_bid">
+    <input type="submit" value="submit">
+</form>
+{% endif %}
+
+
+{% if user.is_authenticated %}
+<form action="{% url 'comment' id=product_information.id %}" method="POST">
+    {% csrf_token %}
+    <label>Write a comment :</label>
+    <input type="text" name="comment">
+    <input type="submit" value="submit">
+</form>
+{% endif %}
+
+<p>Comments:</p>
+<ul>
+{% for c in comments %}
+<li>{{c}} <b><i>( written by {{c.current_user}} )</i></b></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
